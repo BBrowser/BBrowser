@@ -6,17 +6,8 @@ echo 1) Set your Username
 echo 2) Set the Browser
 echo 3) Return to menu
 set /p settings-selection="Select an Option:"
-if %settings-selection% == 1 goto usr-conf
 if %settings-selection% == 2 goto label
 if %settings-selection% == 3 goto menu
-:usr-conf
-title BBrowser - Username
-echo How do you want to be Named?
-set /p username="Your Name:"
-echo Hello, %username%, Is It Right?
-set /p usr-confirm ="(Y/N) "
-if %usr-confirm% == Y goto settings
-if %usr-confirm% == N goto settings
 :label
 title BBrowser - Browser
 echo Type your Browser
@@ -29,15 +20,6 @@ echo Is %browser-lbl% Correct?
 set /p browser-confirm="(Y/N): "
 if %browser-confirm% == Y goto menu
 if %browser-confirm% == N goto settings
-
-
-
-
-
-
-
-
-
 :web
 title BBrowser - Web
 echo Please Set the Link you will Open in the browser (No Protocol, Can Be Subdomain like sub.example.com)
